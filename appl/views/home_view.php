@@ -14,10 +14,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+  <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.bootstrap-growl.min.js'); ?>"></script>
+  
 <script src="<?php echo base_url('assets/js/main_js.js'); ?>"></script>
   
 </head>
-<body>
+<body onLoad="notification()">
 
 
 
@@ -26,27 +28,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="row content">
     
 	
-	<div class="col-sm-2 sidenav well center-cont">
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
-    </div>
+    <?php include ('inc/leftnav.php'); ?>
 	
 	
 	
     <div class="col-sm-8 text-left well center-cont"> 
-      <h1>Welcome <?php echo $username; ?> & ID: <?php echo $id_user; ?></h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <hr>
-      <h3>Test</h3>
-      <p>Lorem ipsum...</p>
-	  
+      <p>ようこそ <?php echo $username; ?> & ID: <?php echo $id_user; ?></p>
+     
+	 
+
 	  
 	  
     </div>
 	
 	
-	
+<script type="text/javascript">
+
+    function notification(){
+        $.bootstrapGrowl("Welcome to Keipuro Tu",{
+            type: 'info',
+            delay: 3000,
+        });
+    };
+
+</script>
 <?php include ('inc/menu.php'); ?>
 	
 	
@@ -54,6 +59,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </div>
 </div>
 
+
+  <!-- Modal -->
+  <?php include ('inc/list2.php'); ?>
 
 
 </body>

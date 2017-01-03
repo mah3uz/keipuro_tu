@@ -13,16 +13,16 @@ body {
 
 a {
   text-decoration: none;
-  color: #c2ae3f;
+  color: #5cb85c;
   -webkit-transition: .5s ease;
   transition: .5s ease;
 }
 a:hover {
-  color: #d8c455;
+  color: #63b763;
 }
 
 .form {
-  background: rgba(19, 35, 47, 0.9);
+  background: rgb(245, 251, 255);
   padding: 40px;
   max-width: 600px;
   margin: 40px auto;
@@ -45,7 +45,7 @@ a:hover {
   text-decoration: none;
   padding: 15px;
   background: rgba(160, 179, 176, 0.25);
-  color: #a0b3b0;
+  color: rgba(99, 183, 99, 0.77);
   font-size: 20px;
   float: left;
   width: 50%;
@@ -55,11 +55,11 @@ a:hover {
   transition: .5s ease;
 }
 .tab-group li a:hover {
-  background: #d8c455;
+  background: #63b763;
   color: #ffffff;
 }
 .tab-group .active a {
-  background: #c2ae3f;
+  background: #5cb85c;
   color: #ffffff;
 }
 
@@ -88,7 +88,7 @@ label {
 }
 label .req {
   margin: 2px;
-  color: #c2ae3f;
+  color: #5cb85c;
 }
 
 label.active {
@@ -105,7 +105,7 @@ label.highlight {
   color: #ffffff;
 }
 
-input, textarea {
+  input, textarea {
   font-size: 22px;
   display: block;
   width: 100%;
@@ -113,19 +113,19 @@ input, textarea {
   padding: 5px 10px;
   background: none;
   background-image: none;
-  border: 1px solid #a0b3b0;
-  color: #ffffff;
+  border: 1px solid rgba(99, 183, 99, 0.77);
+  color: #2b2b2b;
   border-radius: 0;
   -webkit-transition: border-color .25s ease, box-shadow .25s ease;
   transition: border-color .25s ease, box-shadow .25s ease;
 }
 input:focus, textarea:focus {
   outline: 0;
-  border-color: #c2ae3f;
+  border-color: #5cb85c;
 }
 
 textarea {
-  border: 2px solid #a0b3b0;
+  border: 2px solid rgba(99, 183, 99, 0.77);
   resize: vertical;
 }
 
@@ -157,19 +157,20 @@ textarea {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .1em;
-  background: #c2ae3f;
+  background: #5cb85c;
   color: #ffffff;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   -webkit-appearance: none;
 }
 .button:hover, .button:focus {
-  background: #d8c455;
+  background: #63b763;
 }
 
 .button-block {
   display: block;
   width: 100%;
+  cursor: pointer;
 }
 
 .forgot {

@@ -6,12 +6,15 @@
 	
 	
 	.menubtn {
-      margin-bottom: 10px !important;
+    margin-bottom: 10px !important;
+    width: 130px;
+    text-align: center;
     }
 	
 	
 	.center-cont {
       margin-top: 20px !important;
+	  
 	  
     }
 	
@@ -24,6 +27,7 @@
       padding-top: 20px;
       background-color: #fff;
       height: 100%;
+	  
     }
     
     /* Set black background color, white text and some padding */
@@ -41,3 +45,15 @@
       }
       .row.content {height:auto;} 
     }
+
+
+ul.right_menu {
+    list-style: none;
+}
+
+ul.right_menu > li {
+    
+}
+ul.right_menu > li > button {
+
+}
