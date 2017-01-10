@@ -1,3 +1,8 @@
+body {
+  background: #ABABAB !important;
+}
+
+
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
       margin-bottom: 0;
@@ -9,13 +14,25 @@
     margin-bottom: 10px !important;
     width: 130px;
     text-align: center;
+    font-size: 16px;
+    padding: 6px;
+    border-radius: 10px;
+    margin: 0px 3px 10px 20px;
+    min-width: 80px;
+    height: 40px;
+    font-weight: bold;
+    box-shadow: 0px 2px 0px 0px #398439;
+    border: 1px solid #398439;
     }
 	
 	
 	.center-cont {
       margin-top: 20px !important;
-	  
-	  
+      background-color: white;
+      border: 3px solid;
+      border-radius: 35px;
+      padding: 3.5%;
+      width: 66%;
     }
 	
     
@@ -25,7 +42,7 @@
     /* Set gray background color and 100% height */
     .sidenav {
       padding-top: 20px;
-      background-color: #fff;
+      background-color: #ABABAB;;
       height: 100%;
 	  
     }
@@ -47,8 +64,16 @@
     }
 
 
+.right-menu-area {
+    position: fixed;
+    width: 15%;
+    margin-top: 20px;
+}
+
 ul.right_menu {
     list-style: none;
+    position: relative;
+    right: 25px;
 }
 
 ul.right_menu > li {
@@ -57,3 +82,18 @@ ul.right_menu > li {
 ul.right_menu > li > button {
 
 }
+
+.left-nav-bar {
+  background-color: white;
+  border: 2px solid #7f7f7f;
+  border-radius: 34px;
+  height: 95%;
+  width: 15%;
+  padding: 10px;
+  position: fixed;
+}
+
+
+/*#cke_1_top, #cke_1_bottom {
+  display: none;
+}*/

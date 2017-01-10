@@ -7,7 +7,7 @@ CKEDITOR.editorConfig = function( config ) {
 	
 	// %REMOVE_START%
 	// The configuration options below are needed when running CKEditor from source files.
-	config.plugins = 'basicstyles,blockquote,dialogui,dialog,clipboard,panel,floatpanel,menu,contextmenu,resize,button,toolbar,elementspath,enterkey,entities,popup,filebrowser,floatingspace,listblock,richcombo,format,horizontalrule,htmlwriter,wysiwygarea,image,indent,indentlist,fakeobjects,link,list,magicline,maximize,pastetext,pastefromword,removeformat,showborders,specialchar,menubutton,scayt,stylescombo,tab,table,tabletools,undo,notification,autosave,xml,ajax,font,language,pagebreak,print,justify,panelbutton,colorbutton';
+	config.plugins = 'basicstyles,blockquote,dialogui,dialog,clipboard,panel,floatpanel,menu,contextmenu,resize,button,toolbar,elementspath,enterkey,entities,popup,filebrowser,floatingspace,listblock,richcombo,format,horizontalrule,htmlwriter,wysiwygarea,image,indent,indentlist,fakeobjects,link,list,magicline,maximize,pastetext,pastefromword,removeformat,showborders,specialchar,menubutton,scayt,stylescombo,tab,table,tabletools,undo,notification,xml,ajax,font,language,pagebreak,print,justify,panelbutton,colorbutton';
 	config.skin = 'moono-lisa';
 	// %REMOVE_END%
 
@@ -42,4 +42,7 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// Simplify the dialog windows.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
+	config.removePlugins = 'autosave';
+	config.height = '32em';
+
 };

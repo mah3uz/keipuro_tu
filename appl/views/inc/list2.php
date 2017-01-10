@@ -10,7 +10,7 @@
           <h4 class="modal-title">Modal Header</h4>
         </div>-->
         <div class="modal-body">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
 		  
 		  
             <table class="table table-bordered table-hover table-striped">

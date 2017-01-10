@@ -22,4 +22,18 @@ function toggleFullScreen() {
 }
 
 
+    var input = document.getElementById('word');
+    wanakana.bind(input);
 
+
+// function onClickToolbarButton() {
+//     var bar = document.getElementById("cke_1_top");
+//     if(bar.style.display == "none"){
+//         bar.style.display = "block";
+//     }else{
+//         bar.style.display = "none";
+//     }
+
+//     //resize web page
+//     //onresize();
+// }

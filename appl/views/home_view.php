@@ -33,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	
 	
     <div class="col-sm-8 text-left well center-cont"> 
-      <p>ようこそ <?php echo $username; ?> & ID: <?php echo $id_user; ?></p>
+      <!-- <p>ようこそ <?php echo $username; ?> & ID: <?php echo $id_user; ?></p> -->
      
 	 
 

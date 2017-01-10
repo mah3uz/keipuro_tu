@@ -33,10 +33,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	
 	
     <div class="col-sm-8 text-left well center-cont"> 
-      <p>ようこそ <?php echo $username; ?> & ID: <?php echo $id_user; ?></p>
+      <!-- <p>ようこそ <?php echo $username; ?> & ID: <?php echo $id_user; ?></p> -->
      
 	         <div class="modal-body">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
 		  
 		  
             <table class="table table-bordered table-hover table-striped">
@@ -60,8 +60,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                            
 
                             
-                            <td><a  href="<?php echo site_url('admin/view') . '/' . $list['id_word']; ?>"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></a></td>
-							<td><a onclick="return confirm('Delete Resume?');" href="<?php echo base_url('home/delete_word') . '/' . $list['id_word']; ?>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
+                            <td><a onclick="return confirm('Update Word?');"  href="<?php echo site_url('home/word_edit') . '/' . $list['id_word']; ?>"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a></td>
+							<td><a onclick="return confirm('Delete Word?');" href="<?php echo base_url('home/delete_word') . '/' . $list['id_word']; ?>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
                         </tr>
                     <?php endforeach; ?>
 

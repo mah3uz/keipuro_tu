@@ -25,22 +25,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       
       <div class="tab-content">
         <div id="signup">   
-          <h1>Log in</h1>
-          
+                    <?php if ( isset($mgs) ) { ?>
+					<font color="green" > Signup succesfully! You may login now.</font>
+					<?php } ?>
+		<h1>Log in</h1>
+
           <form action="<?php echo base_url('user/userauthorication'); ?>" method="post">
           
 
 
 			  <div class="field-wrap">
-				<label>
+				<!-- <label>
 				  Phone<span class="req">*</span>
-				</label>
+				</label> -->
 				<input type="text" name="phone" value="01922715500" required autocomplete="off"/>
 			  </div>
 			  
 			  <div class="field-wrap">
-				<label>
-				 Password<span class="req">*</span>
+				<!-- <label>
+				 Password<span class="req">*</span> -->
 				</label>
 				<input type="password" value="123456" name="password" required autocomplete="off"/>
 			  </div>
@@ -56,13 +59,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div id="login">   
           <h1>Sign Up</h1>
           
-          <form action="loggedin.html" method="post">
+          <form action="<?php echo base_url('user/signup'); ?>" method="post">
           
             <div class="field-wrap">
             <label>
-              Email Address<span class="req">*</span>
+             Phone<span class="req">*</span>
             </label>
-            <input type="email" name="email" required autocomplete="off"/>
+            <input type="text" name="phone" required autocomplete="off"/>
           </div>
           
           <div class="field-wrap">
@@ -74,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           
           <p class="forgot"><a href="#">Forgot Password?</a></p>
           
-          <button class="button button-block"/>Sign Up</button>
+          <button type="submit" class="button button-block"/>Signup</button>
           
           </form>
 

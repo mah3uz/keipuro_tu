@@ -33,11 +33,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	
 	
     <div class="col-sm-8 text-left well center-cont"> 
-      <p>ようこそ <?php echo $username; ?> & ID: <?php echo $id_user; ?></p>
-     
-	 <?php foreach ($words as $words){ ?>
+      <!-- <p>ようこそ <?php echo $username; ?> & ID: <?php echo $id_user; ?></p>  -->
+      <?php foreach ($words as $word){ ?>
+	 <a href="<?php echo base_url('home/word_edit/'); ?><?php echo $word->id_word; ?>" class="btn btn-success menubtn">Edit Now</a>
+	
 
-	 <?php echo $words->text; ?>
+	 <?php echo $word->text; ?>
 	  
 	 <?php } ?>
     </div>

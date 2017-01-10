@@ -74,6 +74,24 @@ class User extends CI_Controller {
 		 return false;
 	   }
 	 }
+	 
+	 
+	 
+	 
+	 	public function signup()
+	{
+
+			
+			$this->user_model->signup(array(
+			'phonenumber' => $this->input->post('phone'),
+			'password' => md5($this->input->post('password')),
+
+			));
+						 
+				$this->data['mgs']='Signup successfully';
+				$this->load->view('login_view',$this->data);
+
+	}
 	
 	
 	

@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+	defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +23,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://jacos.it/keipuro_tu/';
+$config['base_url'] = '' . '/keipuro_tu_1.02/';
+// $config['base_url'] = $_SERVER["HTTP_HOST"] . '/keipuro_tu_1.02/';
+// $config['base_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
+// $config['base_url'] .= "://".$_SERVER['HTTP_HOST'];
+// $config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
 
 /*
 |--------------------------------------------------------------------------
@@ -314,7 +318,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = 'k016d5U1UvWhe5L67UHsIcwnFFkEKB5R';
+$config['encryption_key'] = '';
 
 /*
 |--------------------------------------------------------------------------

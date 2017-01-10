@@ -33,8 +33,10 @@ class Home extends CI_Controller {
 				
 				$this->data['title']='Home :: Keipuro Tu';
 				
+				//$abc = $this->Prime_model->LastElement();
 			
-				$this->load->view('home_view',$this->data);
+				//$this->load->view('home_view',$this->data);
+				redirect('home/add_new_text', 'refresh');
 			
 		}
 		
@@ -53,12 +55,17 @@ class Home extends CI_Controller {
 	{
 		if($this->session->userdata('logged_in'))
 		{
+			//initialize flag session
+			$_SESSION['flag']='insert';
+				
 			 $session_data = $this->session->userdata('logged_in');
 				$this->data['username'] = $session_data['username'];
 				$this->data['id_user'] = $session_data['id_users'];
 			 
 				$this->data['title']='Add New Word :: Keipuro Tu';
 				$this->load->view('new_text_view',$this->data);
+				
+				
 			
 		}
 		
@@ -76,18 +83,94 @@ class Home extends CI_Controller {
 	
 	public function add_word()
 	{
+		
+		 $count = mb_strlen(strip_tags($this->input->post('word')));
+		 if ($count>11) { 
+		//do insert & update
+		
+		
 		if($this->session->userdata('logged_in'))
 		{
 			
 			
-			$this->Prime_model->WordInsert(array(
+				$session_data = $this->session->userdata('logged_in');
+				$this->data['username'] = $session_data['username'];
+				$this->data['id_user'] = $session_data['id_users'];
+				
+				$this->data['title']='Add New Word :: Keipuro Tu';
+				
+				//initialize flag session
+				//$_SESSION['flag']='insert';
+				
+				if($_SESSION['flag']=='insert')
+				{
+					//changes to session update
+					$_SESSION['flag']='update';
+					$userid= $this->input->post('id_user');
+					$this->Prime_model->WordInsert(array(
+					'text' => $this->input->post('word'),
+					'name_word' => str_replace(' ', '', preg_replace('/<[^>]*>/', '',  $this->input->post('word'))),
+					'id_users' => $this->input->post('id_user'),
+					
+					));
+					
+					
+					$_SESSION['id'] = $this->Prime_model->LastElement($userid);
+					
+				}
+				
+				
+				if($_SESSION['flag']=='update')
+				{
+					
+					$this->Prime_model->UpdateWord($_SESSION['id'],array(
+					'text' => $this->input->post('word'),
+					'name_word' => str_replace(' ', '', preg_replace('/<[^>]*>/', '',  $this->input->post('word'))),
+					'modify'=>date('y/m/d h:i:s a', time()),
+
+			));
+					
+				}
+					
+			
+			
+		}
+		
+		
+		else
+		{
+				//If no session, redirect to login page
+				redirect('user', 'refresh');
+		}
+		
+		
+		
+		
+		
+	}	
+		
+		
+		
+}
+	
+	//update Word
+	
+		public function update_word($id_word)
+	{
+		
+		
+		 $count = mb_strlen(strip_tags($this->input->post('word')));
+		 if ($count>11) { 
+		
+		
+		if($this->session->userdata('logged_in'))
+		{
+			
+			
+			$this->Prime_model->UpdateWord($id_word,array(
 			'text' => $this->input->post('word'),
-			
-			//'name_word' => preg_replace('/\s+/','', $this->input->post('word')),
-			
 			'name_word' => str_replace(' ', '', preg_replace('/<[^>]*>/', '',  $this->input->post('word'))),
-			
-			'id_users' => $this->input->post('id_user'),
+			'modify'=>date('y/m/d h:i:s a', time()),
 
 			));
 			
@@ -98,8 +181,8 @@ class Home extends CI_Controller {
 				$this->data['id_user'] = $session_data['id_users'];
 			 
 				$this->data['title']='Add New Word :: Keipuro Tu';
-				$this->load->view('new_text_view',$this->data);
-			
+				//$this->load->view('content_list_view',$this->data);
+				redirect('home/word_lists', 'refresh');
 		}
 		
 		
@@ -109,8 +192,10 @@ class Home extends CI_Controller {
 				redirect('user', 'refresh');
 		}
 	
-	
 	}
+	
+	
+}
 
 
 
@@ -128,7 +213,7 @@ public function word_lists() {
 			
         $config['base_url'] = site_url('home/word_lists/');
         $config['total_rows'] = $this->db->get('word')->num_rows();
-        $config['per_page'] = 9;
+        $config['per_page'] = 10;
         $config['num_links'] = 5;
         $config['full_tag_open'] = '<ul class="pagination no-margin">';
         $config['full_tag_close'] = '</ul>';
@@ -179,6 +264,32 @@ public function word_lists() {
 				
 				$this->data['words'] = $this->Prime_model->getWordByID($id);
 				$this->load->view('word_view',$this->data);
+			
+		}
+		
+		
+		else
+		{
+				//If no session, redirect to login page
+				redirect('user', 'refresh');
+		}
+	
+	
+	}
+	
+	//Edit word
+		public function word_edit($id)
+	{
+		if($this->session->userdata('logged_in'))
+		{
+				$session_data = $this->session->userdata('logged_in');
+				$this->data['username'] = $session_data['username'];
+				$this->data['id_user'] = $session_data['id_users'];
+			 
+				$this->data['title']='Add New Word :: Keipuro Tu';
+				
+				$this->data['words'] = $this->Prime_model->getWordByID($id);
+				$this->load->view('edit_view',$this->data);
 			
 		}
 		

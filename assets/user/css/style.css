@@ -79,7 +79,7 @@ label {
   -webkit-transform: translateY(6px);
           transform: translateY(6px);
   left: 13px;
-  color: rgba(255, 255, 255, 0.5);
+  color: #63b763;
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
   -webkit-backface-visibility: hidden;
@@ -102,7 +102,7 @@ label.active .req {
 }
 
 label.highlight {
-  color: #ffffff;
+  color: #63b763;
 }
 
   input, textarea {
